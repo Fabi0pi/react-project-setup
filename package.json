@@ -2,6 +2,7 @@
   "name": "react-project-setup",
   "version": "0.0.1",
   "description": "Creation of a React project without using Create React App.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
