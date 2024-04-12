@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+
+# dependencies
+/node_modules
+
+# production
+/build
+dist
+
+# Editor directories and files
+.vscode/*
+
+# other
+*.env
