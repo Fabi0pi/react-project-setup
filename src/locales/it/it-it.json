@@ -1,7 +1,8 @@
 {
+    "global": {},
     "form": {
         "labels": {
-            "registration": "Registrazione",
+            "registration": "Form di registrazione",
             "phoneNumber": {
                 "label": "Numero di telefono",
                 "placeholder": "Inserisci numero di telefono"

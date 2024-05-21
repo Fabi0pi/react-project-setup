@@ -1,27 +1,28 @@
 {
+    "global": {},
     "form": {
         "labels": {
-            "registration": "Registration",
+            "registration": "Registration form",
             "phoneNumber": {
                 "label": "Phone number",
-                "placeholder": "Insert phone number"
+                "placeholder": "Digit phone number"
             },
             "address": {
                 "label": "Address",
-                "placeholder": "Insert Address"
+                "placeholder": "Digit Address"
             },
             "email":{
                 "label":"Email",
-                "placeholder": "Insert Email"
+                "placeholder": "Digit Email"
             },
             "pw":{
                 "label":"Password",
-                "placeholder": "Insert Password"
+                "placeholder": "Digit Password"
             }
         },
         "errors": {
-            "email": "Insert a valid email",
-            "password": "Insert a valid password",
+            "email": "Digit a valid email",
+            "password": "Digit a valid password",
             "general": ""
         }
     },
