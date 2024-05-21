@@ -1,0 +1,36 @@
+{
+    "form": {
+        "labels": {
+            "registration": "Registration",
+            "phoneNumber": {
+                "label": "Phone number",
+                "placeholder": "Insert phone number"
+            },
+            "address": {
+                "label": "Address",
+                "placeholder": "Insert Address"
+            },
+            "email":{
+                "label":"Email",
+                "placeholder": "Insert Email"
+            },
+            "pw":{
+                "label":"Password",
+                "placeholder": "Insert Password"
+            }
+        },
+        "errors": {
+            "email": "Insert a valid email",
+            "password": "Insert a valid password",
+            "general": ""
+        }
+    },
+    "labels": {
+        "welcom": "Welcome to the react project setup"
+    },
+    "buttons": {
+        "submit": "Submit",
+        "en": "En",
+        "it": "It"
+    }
+}

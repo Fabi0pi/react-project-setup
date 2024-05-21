@@ -14,8 +14,11 @@
   "author": "Fabio_Pi",
   "license": "ISC",
   "dependencies": {
+    "@fabio_pi_org/open-ui": "^1.3.7",
+    "i18next": "^23.11.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
@@ -30,6 +33,6 @@
     "prettier": "3.2.5",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.6.0",
-    "vite": "^5.2.8"
+    "vite": "^5.2.11"
   }
 }
