@@ -106,3 +106,29 @@ const Languages = ({ changeLanguage, t, activeLng }: LngProps) => {
       </Button>
     </div>)
 }
+
+
+
+
+/**
+ * 
+ * type User = {
+  id: number;
+  name: string;
+  email: string;
+}
+
+  const [users, setUsers] = useState<User[]>([]);
+  const [editingUser, setEditingUser] = useState<User | null>(null);
+
+  const addUser = (user: User) => {
+    setUsers([...users, user]);
+  };
+
+  const updateUser = (updatedUser: User) => {
+    setUsers(users.map(user => (user.id === updatedUser.id ? updatedUser : user)));
+  };
+ * 
+ * 
+ * 
+ */
