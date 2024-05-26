@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
-import en_lng from './lang/en/en-en.json'
-import it_lng from './lang/it/it-it.json'
-import { Locale, Messages } from './lang/types'
+import en_lng from './en/en-en.json'
+import it_lng from './it/it-it.json'
+import { Locale, Messages } from './types'
 
 export const useIntl = () => {
   const [locale, setLocale] = useState<Locale>('en')

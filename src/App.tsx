@@ -3,7 +3,7 @@ import { Box, Button, Text, theme, validateEmail } from "@fabio_pi_org/open-ui"
 import './app.css'
 import { InputForm } from "./components/Input";
 import { IntlProvider } from "react-intl";
-import { useIntl } from "./intl";
+import { useIntl } from "./lang/useIntl";
 import { Locale } from "./lang/types";
 
 
