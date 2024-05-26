@@ -27,7 +27,7 @@
         }
     },
     "labels": {
-        "welcom": "Welcome to the react project setup"
+        "welcome": "Welcome to the react project setup"
     },
     "buttons": {
         "submit": "Submit",

@@ -2,14 +2,16 @@ import { ChangeEventHandler, useState } from "react"
 import { Box, Button, Text, theme, validateEmail } from "@fabio_pi_org/open-ui"
 import './app.css'
 import { InputForm } from "./components/Input";
-import { useTranslation } from "react-i18next";
+import { IntlProvider } from "react-intl";
+import { useIntl } from "./intl";
+import { Locale } from "./lang/types";
 
 
 function App() {
-  const { t, i18n } = useTranslation()
+  const {locale, setLocale, messages} = useIntl()
   const [val, setVal] = useState("")
   const [emailError, setEmailError] = useState(false);
-  const [lngActive, setLngActive] = useState(i18n.language);
+  const [lngActive, setLngActive] = useState(locale);
 
   const handleOnChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     const value = event.target.value
@@ -24,69 +26,64 @@ function App() {
     }
   }
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+  const changeLanguage = (lng: Locale) => {
     setLngActive(lng)
+    setLocale(lng)
   };
 
 
   return (
-    <>
-      <Languages t={t} changeLanguage={changeLanguage} activeLng={lngActive} />
+    <IntlProvider messages={messages} locale={locale} defaultLocale="en">
+      <Languages changeLanguage={changeLanguage} activeLng={lngActive} />
       <div className="loginContainer">
         <Box className="box">
-          <Text variant="h2" emphasis>{t("form.labels.registration")}</Text>
+          <Text variant="h2" emphasis>{messages.form.labels.registration}</Text>
         </Box>
         <InputForm
-          t={t}
-          label={`${t("form.labels.phoneNumber.label")}`}
+          label={messages.form.labels.phoneNumber.label}
           theme={theme}
           type="text"
-          placeholder={`${t("form.labels.phoneNumber.placeholder")}`}
+          placeholder={messages.form.labels.phoneNumber.placeholder}
         />
         <InputForm
-          t={t}
-          label={`${t("form.labels.address.label")}`}
+          label={messages.form.labels.address.placeholder}
           theme={theme}
           type="text"
-          placeholder={`${t("form.labels.address.placeholder")}`}
+          placeholder={messages.form.labels.address.placeholder}
         />
         <InputForm
-          t={t}
           emailError={emailError}
-          label={`${t("form.labels.email.label")}`}
+          errorMessage={messages.form.errors.email}
+          label={messages.form.labels.email.label}
           onChange={handleOnChange}
           theme={theme}
           type="text"
-          placeholder={`${t("form.labels.email.placeholder")}`}
+          placeholder={messages.form.labels.email.placeholder}
         />
         <InputForm
-          t={t}
-          label={`${t("form.labels.pw.label")}`}
+          label={messages.form.labels.pw.label}
           theme={theme}
           type="Password"
-          placeholder={`${t("form.labels.pw.placeholder")}`}
+          placeholder={messages.form.labels.pw.placeholder}
         />
         <Box className="submit" >
           <Button size="sm" variant="solid" onClick={handleOnclick} >
-            {t("buttons.submit")}
+            {messages.buttons.submit}
           </Button>
         </Box>
       </div>
-    </>
+    </IntlProvider>
   )
 }
 
 export default App
 
 type LngProps = {
-  changeLanguage: (x: string) => void
-  t: (x: string) => string
+  changeLanguage: (x: Locale) => void
   activeLng: string
 }
 
-const Languages = ({ changeLanguage, t, activeLng }: LngProps) => {
-  console.log("🚀 ~ Languages ~ activeLng:", activeLng)
+const Languages = ({ changeLanguage, activeLng }: LngProps) => {
   return (
     <div className="lngBox">
       <Button 
@@ -95,14 +92,14 @@ const Languages = ({ changeLanguage, t, activeLng }: LngProps) => {
         onClick={() => changeLanguage('en')}
         className={activeLng === 'en' ? "lngActive" : ""}
         >
-        {t("buttons.en")}
+        Eng
       </Button>
       <Button 
         size="sm" 
         variant="ghost" 
         onClick={() => changeLanguage('it')}
         className={activeLng === 'it' ? "lngActive" : ""}>
-        {t("buttons.it")}
+        Ita
       </Button>
     </div>)
 }
